@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet"> 
+    <title>My Online BookShop.com</title>
+    <style>
+        *
+        {
+            margin:0px;
+            padding: 0px;
+        }
+         .container
+         {
+             display: grid;
+             box-sizing: border-box;
+             grid-template-columns: 1fr 2fr 1fr;
+             grid-template-rows: 45px;
+         }
+         .item
+         {
+             
+             color: black;
+         }
+         .item p
+         {
+             padding-left:15px;
+             padding-top:8px;
+             font-size: 30px;
+             font-family: 'Ranchers', cursive;
+         }
+         .navbar
+         {
+             font-size: 20px;
+             padding-top: 20px;
+             padding-left: 3px;
+         }
+         .navbar pre a
+         {
+             text-decoration: none;
+             color: black;
+         }
+         .navbar pre a:hover
+         {
+             color:white;
+             background-color: black;
+             border: 2px solid black;
+             border-radius: 23px;
+             font-family: 'Karla', sans-serif;
+         }
+         header::before
+         {   content: "";
+             background:url('book.jpg') no-repeat center center/cover;
+             position: absolute;
+             width: 100%;
+             height: 45px;
+             z-index:-1;
+             opacity: 0.5;
+         }
+         .btn
+         {
+             padding-left: 150px;
+             padding-top: 10px;
+         }
+         .btn #log
+         {
+             background-color: white;
+             color:red;
+             border: 1px solid red;
+             border-radius:5px;
+             font-size:25px;
+             cursor:pointer;
+             height: 35px;
+         }
+         .btn #log:hover
+         {
+             background-color: red;
+             color:white;
+         }
+         .btn #Sign
+         {
+             background-color: white;
+             color:green;
+             border: 1px solid green;
+             border-radius:5px;
+             font-size:25px;
+             cursor:pointer;
+             height: 35px;
+              
+         }
+         .btn #Sign:hover
+         {
+             background-color: green;
+             color:white;
+         }
+         section::before
+         {
+            content: "";
+             background:url('beachbook.jpg') no-repeat center center/cover;
+             position: absolute;
+             width: 100%;
+             height: 382px;
+             z-index:-1;
+             opacity: 0.5;
+         }
+         .box
+         {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+             width: 100%;
+             height:382px;
+         }
+         .box #para
+         {
+             font-size: 55px;
+             font-family: 'Ranchers', cursive;
+             padding-top: 5px;
+             padding-bottom: 5px;
+         }
+         .box #para2
+         {
+             font-size: 28px;
+             font-family: 'Karla', sans-serif;
+             padding-bottom: 15px;   
+         }
+         .box input[type='button']
+         {
+             font-size:15px;
+             padding: 10px;
+             background-color: black;
+             color:white;
+             border:2px solid black;
+             border-radius: 5px;
+             cursor: pointer;
+         }
+         .box input[type='button']:hover
+         {
+            background-color: white;
+             color:black;
+         }
+         .grid
+         {
+             display: grid;
+             grid-template-columns:641px 641px;
+             grid-template-rows: 350px;
+         }
+         .grid div
+         {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             background-color: rgb(226, 217, 217);
+         }
+         #about
+         {
+             font-size: 35px;
+         }
+         #about_nest
+         {
+             font-size:20px;
+             padding-left: 10px;
+             padding-right: 10px;
+             font-family: 'Balsamiq Sans', cursive;
+         }
+         #image
+         {
+             background-color: white;
+             background: url('bookarrange.jpg') no-repeat center center/cover;
+             opacity: 0.8;
+         }
+         .service::before
+         {
+            content: "";
+            background-color: rgb(136, 229, 241);
+            position: absolute;
+            height: 657px;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.3;
+         }
+         h2{
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             font-size: 30px;
+             padding: 60px;
+         }
+         .choice
+         {
+             display: inline-block;
+             box-sizing: border-box;
+             padding-top: 40px;
+             padding-left: 95px;
+             width:300px;
+             height: 400px;
+             border: 4px solid black;
+             border-radius: 10px;
+            margin: 15px;
+            background-color:whitesmoke;
+            font-size: 25px;
+         }
+         #choice2
+         {
+             padding-left: 87px;
+         }
+         .option
+         {
+             height:500px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+         .choice p
+         {
+             
+             margin-top: 60px;
+             font-size: 26px;
+             color: rgb(128, 123, 123);
+         }
+         #readbook
+         {
+             padding-left: 13px;
+             padding-right: 42px;
+         }
+         #Read
+         {
+                margin-top: 48px;
+                background-color:white;
+         border:2px solid black;
+         border-radius: 5px;
+         font-size: 20px;
+         color: black;
+         cursor: pointer;
+         }
+         #Read:hover
+         {
+             background-color: black;
+             color: white;
+         }
+         #Download
+         {
+            margin-top: 48px;
+                background-color:white;
+         border:2px solid black;
+         border-radius: 5px;
+         font-size: 20px;
+         color: black;
+         cursor: pointer;
+         }
+         #Download:hover
+         {
+            background-color: black;
+             color: white;
+         }
+         #Buy
+         { margin-top: 80px;
+         margin-left: 10px;
+         background-color:white;
+         border:2px solid black;
+         border-radius: 5px;
+         font-size: 20px;
+         color: black;
+         cursor: pointer;
+         }
+         #Buy:hover
+         {
+             background-color: black;
+             color: white;
+         }
+         footer
+         {  display: flex;
+             background-color: black;
+             color:white;
+             justify-content: center;
+             align-items: center;
+         }
+         @media only screen and (min-width: 954px) and (max-width:1217px)
+         {
+             .btn
+             {
+                 padding-left: 80px;
+             }
+         }
+         @media only screen and (min-width: 863px) and (max-width:953px)
+         {
+             .btn
+             {
+                 padding-left: 32px;
+             }
+         }
+         @media only screen and (min-width: 686px) and (max-width:862px)
+         {
+             .btn
+             {
+                 display: flex;
+                 flex-direction: column-reverse;
+                 padding-left: 16px;
+             }
+             .btn #log
+             {
+                 font-size: 20px;
+             }
+             .btn #Sign
+             {
+                 font-size:20px;
+             }
+         }
+
+         @media only screen and (min-width: 863px) and (max-width: 1191px)
+         {
+            .item p
+         {
+             padding-left:8px;
+             padding-top:15px;
+             font-size: 18px;
+             font-family: 'Ranchers', cursive;
+         }
+         }
+         @media only screen and (min-width:600px)
+         {
+             .item p
+             {
+                 font-size:16px;
+                 
+             }
+         }
+         @media only screen and (min-width:841px) and (max-width:1000px)
+         {
+            .grid
+         {
+             display: grid;
+             grid-template-columns:500px 500px;
+             grid-template-rows: 350px;
+         }
+         }
+         @media only screen and (min-width:753px) and (max-width:840px)
+         {
+            .grid
+         {
+             display: grid;
+             grid-template-columns:420px 420px;
+             grid-template-rows: 350px;
+         }
+         #about
+         {
+             font-size: 25px;
+         }
+         #about_nest
+         {
+             font-size: 15px;
+         }
+         }
+         @media only screen and (min-width: 448px) and (max-width:693px)
+         {
+             #image
+             {
+                 display: none;
+             }
+             .grid
+         {
+             display: grid;
+             grid-template-columns:100vw;
+             grid-template-rows: 350px;
+         }
+             
+         }
+         @media only screen and (min-width: 360px) and (max-width:447px)
+         { 
+             #image
+             {
+                 display: none;
+             }
+             .grid
+         {
+             display: grid;
+             grid-template-columns:100vw;
+             grid-template-rows: 350px;
+         }
+         #about
+         {
+             font-size: 22px;
+         }
+         #about_nest
+         {
+             font-size: 16px;
+         }   
+         }
+         @media only screen and (min-width:694px) and (max-width:752px)
+         {
+            .grid
+         {
+             display: grid;
+             grid-template-columns:376px 376px;
+             grid-template-rows: 350px;
+         }
+         #about
+         {
+             font-size: 25px;
+         }
+         #about_nest
+         {
+             font-size: 15px;
+         }
+         }
+         @media only screen and (min-width: 481px) and (max-width: 693px)
+         {
+             .container
+             {
+                 display: flex;
+                 flex-direction: column-reverse;
+                 justify-content: center;
+                 align-items: center;
+             }
+             header::before
+             {
+                 height: 153px;
+             }
+             .item p
+             {
+                 font-size:16px;
+                 
+             }
+             .btn
+             {   display: flex;
+                 flex-direction: column-reverse;
+                 padding-left:16px;
+             }
+         }
+         @media only screen and (min-width: 360px) and (max-width: 481px)
+         {
+             .navbar pre a
+             {
+                 font-size: 12px;
+             }
+             .container
+             {
+                 display: flex;
+                 flex-direction: column-reverse;
+                 justify-content: center;
+                 align-items: center;
+             }
+             header::before
+             {
+                 height: 153px;
+             }
+             .item p
+             {
+                 font-size:16px;
+                 
+             }
+             .btn
+             {   display: flex;
+                 flex-direction: column-reverse;
+                 padding-left:16px;
+             }
+         }
+         @media only screen and (max-width:420px)
+         {
+             footer
+             {
+                 font-size: 12px;
+             }
+         }
+         @media only screen and (min-width: 910px) and (max-width:965px)
+         {
+             .choice
+             {
+                 padding-left: 80px;
+             }
+             #choice2
+             {
+                 padding-left: 80px;
+             }
+         }
+         @media only screen and (min-width:816px) and  (max-width:909px)
+         {
+            .choice
+             {
+                 padding-left: 75px;
+             }
+             #choice2
+             {
+                 padding-left: 70px;
+             }
+         }
+         @media only screen and (min-width:752px) and  (max-width:815px)
+         {
+            .choice
+             {
+                 padding-left: 65px;
+             }
+             #choice2
+             {
+                 padding-left: 60px;
+             }
+         }
+         @media only screen and (max-width:751px)
+         {
+             .option
+             {
+                 flex-direction: column;
+                 height:1000px;
+             }
+             .service::before
+             {
+                 height:1233px;
+             }
+         }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="container">
+        <div class="item">
+            <p>MyOnline Bookshop.com</p>
+        </div>
+        <div class="item navbar"><pre><a href='#'>Home</a>   <a href='#'>About</a>   <a href='#'>Services</a>   <a href='#'>Blog</a>   <a href='#'>Contact</a></pre></div>
+        <div class="item btn"><input type="submit" value='LogIn' id='log'>
+            <input type="submit" value='SignUp' id='Sign'></div>
+    </div>
+    </header>
+    <section>
+      <div class="box">
+        <p id='para'>My Online BookShop.com</p>
+        <p id='para2'>A Online Library For Book Lovers</p>
+        <input type="button" value='Read Now'>
+      </div>
+    </section>
+    <article class="grid">
+        <div>
+      <p id='about'>About</p>
+      <p id='about_nest'>
+        Hello Book Lovers.Bored In Lockdown!Cant go outside to purchase your favourite Book!!
+        Cant Find Good Resources on Internet to read your favourite book!!Tension Not.My Online Bookshop.com
+        is here to solve your Problem.We boast of largest book library on Internet  from where you can read your favourite books for free.
+        Yes you read it right.ABsolutely Free of cost and we also provide you option to let you purchase your fav book and guarantee deliver that book in 
+        less than 7  days with minimum shipping cost.So what are you waiting for.Read your favourite books now.  
+      </p>
+      </div>
+       <div id='image'>
+           
+       </div>
+    </article>
+    <article class="service">
+        <h2>Read Your Favourite Book Now</h2>
+        <div class='option'>
+            <div class="choice">Choice1
+                <p id='readbook'>Read Online</p>
+                <input type="submit" value="Read Now" id='Read'>
+            </div>
+            <div class="choice" id='choice2'>Choice2
+                <p>Download Book</p>
+                <input type="submit" value="Download Now" id='Download'>
+            </div>
+            <div class="choice">
+                Choice3
+                <p>Buy Book</p>
+                <input type="submit" value="Buy Now" id='Buy'>
+            </div>
+        </div>
+    </article>
+    <footer>
+        &copy; Copyright reserved with MyOnlineBookshop.com 
+    </footer>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</body>
+</html>
